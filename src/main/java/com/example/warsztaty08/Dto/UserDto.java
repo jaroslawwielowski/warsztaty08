@@ -1,18 +1,19 @@
-package com.example.warsztaty08.Entities;
+package com.example.warsztaty08.Dto;
 
-import javax.persistence.Entity;
+import com.fasterxml.jackson.annotation.JsonView;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.swing.text.View;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 
-@Entity
-public class User {
+public class UserDto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
 
     @NotBlank
     @NotEmpty
@@ -24,18 +25,14 @@ public class User {
 
     private String administrativeRights;
 
-    public User() {
+    public UserDto() {
     }
 
-    public User(String login) {
-
-    }
-
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
